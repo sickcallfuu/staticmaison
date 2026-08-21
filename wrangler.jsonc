@@ -1,8 +1,11 @@
 {
-  "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "staticmaison2",
-  "compatibility_date": "2026-01-07",
+  "compatibility_date": "2026-08-21",
+  "build": {
+    "command": "chmod a+x build.sh && ./build.sh"
+  },
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    "not_found_handling": "404-page"
   }
 }
