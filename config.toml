@@ -35,7 +35,3 @@ email = "m@margot.maison"
 [markup.goldmark]
 [markup.goldmark.renderer]
   unsafe = true
-
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
