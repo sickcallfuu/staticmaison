@@ -14,7 +14,7 @@
 
 <ul>
 	{{ range (where .Data.Pages.ByLastmod.Reverse "Section" "!=" "") }}
-	<li>{{ .Lastmod.Format "2006-01-02" }} | <a href="{{.RelPermalink}}">{{.Title}}</a></li>
+	<li>{{ .Lastmod.Format "2006-01-02" }} ... <a href="{{.RelPermalink}}">{{.Title}}</a></li>
 	{{end}}
 
 </ul>
