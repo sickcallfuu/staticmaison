@@ -1,5 +1,5 @@
 {
-  "name": "staticmaison2",
+  "name": "staticmaison",
   "compatibility_date": "2026-08-21",
   "build": {
     "command": "chmod a+x build.sh && ./build.sh"
