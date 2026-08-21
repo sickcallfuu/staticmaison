@@ -117,6 +117,7 @@ tfoot {
 
 figure {
   max-width: 100%;
+  margin: auto;
 }
 
 figcaption {
@@ -258,6 +259,11 @@ img[class*="emoji"][src$=".svg"] {
     line-height: 1.8;
   }
 
+  figure {
+  max-width: 100%;
+  margin: 0;
+  }
+
   /*gallery*/
 
   .gallery {
@@ -268,7 +274,7 @@ img[class*="emoji"][src$=".svg"] {
   }
 
   .gallery > .item {
-    max-width: 8em;
+    max-width: 10em;
     padding: 0.1em;
     
   }
@@ -276,7 +282,6 @@ img[class*="emoji"][src$=".svg"] {
   .item > figure {
     padding: 0em;
     margin: 0em;
-    max-width: auto;
   }
 
 }
