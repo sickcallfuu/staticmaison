@@ -1,0 +1,18 @@
+{{define "main"}}
+
+
+<!--Title-->
+<h2>{{.Title}}</h2>
+
+<!--Date-->
+{{ $date := .Date.Format "2006-01-02" }}
+{{ $lastmod := .Lastmod.Format "2006-01-02" }}
+<p>{{ $date }} {{ if ne $lastmod $date }} → updated {{ .Lastmod.Format "2006-01-02" }} {{ end }}</p>
+
+<!--TOC-->
+{{.TableOfContents}}
+
+<!--Content-->
+{{.Content}}
+
+{{end}}

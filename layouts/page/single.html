@@ -1,0 +1,16 @@
+{{define "main"}}
+
+<!--Title-->
+<h1>{{.Title}}</h1>
+
+<!--Date-->
+<p>This page last updated: {{ .Lastmod.Format "2006-01-02" }}</p>
+<!--TOC-->
+{{.TableOfContents}}
+
+<!--Content-->
+<section>
+{{.Content}}
+</section>
+
+{{end}}

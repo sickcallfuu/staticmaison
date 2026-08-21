@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+{{- partial "head.html" . -}}
+
+<body>
+    {{- partial "header.html" . -}}
+    <main>
+        <section>
+            <img src="/images/canny-moths-1000_dithered_03.png" width="1000" height="583" alt="doley looking at moths">
+            <p>Margot Ferrick</p>
+            <address><a href="mailto:m&commat;margot&period;maison">m&commat;margot&period;maison</a></address>
+            <p>
+                <a href="/page/info/">info</a>
+                /
+                <a href="https://slit.margot.maison/">blog</a>
+                /
+                <a href="/up_log/index.xml">rss</a>
+            </p>
+            <p>This is an archive of my comics and artwork.</p>
+            <p>Some content is explicit and labeled as
+                <span
+                    style="font-size: smaller; font-weight: bold; color: #9f1239; background-color: none;border: #9f1239 solid 1px; padding: 0.1em">R-18</span>.
+            </p>
+
+            <p>Updated {{ range (where .Site.Pages "Section" "up_log") }}{{ range first 1 .Data.Pages }}<a
+                    href="{{.RelPermalink}}">{{.Title}}</a>.{{ end }}
+                {{ end }}</p>
+            <img src="/images/tinyfairy.png" class="pixel" width="135" height="60" alt="tiny fairy">
+        </section>
+        <section>
+            <h1>what is here...?</h1>
+            <h2>working</h2>
+            <nav aria-label="work in progress">
+                <ul>
+                    <li>
+                        <a href="https://slit.margot.maison">slit of mind</a>: blog
+                    </li>
+                    <li>
+                        <a href="https://slit.margot.maison/tags/borathebrain/">Bora the Brain WIP</a>: longer
+                        comic
+                        currently in progress, hopefully done in 2027.
+                    </li>
+                </ul>
+            </nav>
+            <img src="/images/line1.png" class="pixel" width="269" height="65" alt="drawn line">
+        </section>
+
+        <section>
+
+            <h2>comics</h2>
+            <nav aria-label="comics">
+                <ul>
+                    {{ range where .Pages "Type" "comics" }}
+                    {{ range .Pages.ByLastmod.Reverse }}
+                    <li>{{.Date.Format "2006-01-02"}}
+                        ...
+                        <a href="{{.RelPermalink}}">{{.Title}}</a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+
+                <h3>very short oneshots</h3>
+                <ul>
+                    {{ range where .Pages "Type" "oneshots" }}
+                    {{ range .Pages.ByLastmod.Reverse }}
+                    <li>{{.Date.Format "2006-01-02"}}
+                        ...
+                        <a href="{{.RelPermalink}}">{{.Title}}</a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            </nav>
+            <img src="/images/line3.png" class="pixel" width="156" height="60" alt="line 3">
+        </section>
+
+        <section>
+
+            <h2>drawings/paintings</h2>
+            <nav aria-label="drawings and paintings">
+                <ul>
+                    {{ range where .Pages "Type" "art"}}
+                    {{ range .Pages.ByLastmod.Reverse }}
+                    <li>{{ .Lastmod.Format "2006-01-02" }}
+                        ...
+                        <a href="{{.RelPermalink}}">{{.Title}}</a>
+                        {{- if
+                        .Params.tags }}
+                        <span
+                            style="font-size: smaller; font-weight: bold; color: #9f1239; background-color: none;border: #9f1239 solid 1px; padding: 0.1em">
+                            {{ range .Params.tags }}
+                            {{ . }}</span>
+                        {{ end }}
+                        {{ end }}
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+
+                <ul>
+                    <li>2025-07-17 ...
+                        <a href="/dump">DUMP</a>
+                    </li>
+                </ul>
+            </nav>
+            <img src="/images/ray3.png" class="pixel" width="293" height="247" alt="ray 3">
+        </section>
+
+        <section>
+            <h2>illustration</h2>
+            <nav aria-label="illustration">
+                <ul>
+                    {{ range where .Pages "Type" "illus" }}
+                    {{ range .Pages.ByLastmod.Reverse }}
+                    <li>{{.Date.Format "2006-01-02"}}
+                        ...
+                        <a href="{{.RelPermalink}}">{{.Title}}</a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            </nav>
+            <img src="/images/line2.png" class="pixel" width="175" height="45" alt="line 2">
+        </section>
+
+        <section>
+            <h2>elsewhere</h2>
+            <nav aria-label="external links">
+                <ul>
+                    <li>
+                        <a href="https://www.pixiv.net/en/users/83480423">pixiv</a>
+                    </li>
+                    <li>
+                        <a href="https://margotmaison.bigcartel.com/">shop</a> (on haitus as of 2025-09-13)
+                    </li>
+                    <li>
+                        <a href="https://www.patreon.com/margotmaison">patreon</a>
+                    </li>
+                    <li>
+                        <a href="https://petselbee.uk">petselbee</a>
+                    </li>
+                </ul>
+                <h3>Fromsoft fanart</h3>
+                <ul>
+                    <li>
+                        <a href="https://fuu.margot.maison">fuu</a>: I really love games made by
+                        the developer Fromsoft, especially Dark Souls and Elden Ring. I keep my fanart over here...
+                    </li>
+                    <li>
+                        <a href="https://www.breakdownpress.com/store/half-gold-half-dung-by-margot-ferrick">Half
+                            Gold / Half Dung</a>: Small book of drawings made between 2020-2024.
+                        Published by Breakdown Press.
+                    </li>
+                </ul>
+            </nav>
+            <img src="/images/line1.png" class="pixel" width="269" height="65" alt="drawn line">
+        </section>
+</body>
+
+</html>
+</main>
+{{- partial "footer.html" . -}}
+</body>
+
+</html>

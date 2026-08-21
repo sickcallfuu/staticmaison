@@ -1,0 +1,15 @@
+{{define "main"}}
+
+<dl>
+    <dt>{{ .Date.Format "2006-01-02" }}</dt>
+    {{ if .Description }}
+    <dt>{{ .Description }}</dt>
+    {{ end }}
+    {{- if .Params.tags }}
+    <dt>{{ range .Params.tags }} [{{ . }}]{{ end }}</dt>
+    {{ end }}
+</dl>
+
+{{ .Content }}
+
+{{end}}

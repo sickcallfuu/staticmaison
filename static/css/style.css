@@ -1,0 +1,301 @@
+/* Make HTML more responsive (adapted from https://github.com/mrmrs/fluidity) */
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+  height: auto;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+/* Box-model fix (adapted from https://css-tricks.com/box-sizing/) */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 1.125em;
+}
+
+body {
+  color: #262626;
+  background-color: #f5f5f5;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0.4em 1em;
+  font-family: monospace;
+}
+
+p {
+  max-width: 80em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+ul,ol,li {
+  max-width: 40em;
+}
+
+dt,dl,dd {
+  font-style: italic;
+}
+
+span.red {
+  font-size: small;
+  padding: 0.1em;
+  color: #9f1239;
+  background-color: #fff1f2;
+  border: #9f1239 solid 1px;
+}
+
+a[href],
+a[href]:visited {
+  color: #525252;
+}
+
+a[href]:hover {
+  background-color: #ddd6fe;
+}
+
+:not(a[href]) b,
+:not(a[href]) strong,
+th {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+  border: none;
+  border-top: #111 1px solid;
+}
+
+header {
+  max-width: 100%;
+  padding-bottom: 0.6em;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 0.6em;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding-left: .5em;
+  padding-right: 1em;
+  text-align: start;
+  border: 1px solid #ddd;
+}
+
+th,
+thead,
+tfoot {
+  background: #eee;
+  font-weight: bold;
+}
+
+figure {
+  max-width: 100%;
+  padding: 0em;
+  margin: 0em;
+}
+
+figcaption {
+  font: inherit;
+  font-size: 75% !important;
+}
+
+/* Prevent blowing up SVG images that are meant to be small */
+*[class*="social"] svg,
+*[class*="icon"] svg,
+svg[class*="icon"],
+img[class*="emoji"][src$=".svg"] {
+  max-height: 30px;
+}
+
+*[class*="logo" i] svg,
+*[id*="logo" i] svg {
+  max-width: 100px;
+}
+
+/*pixelly images*/
+.pixel {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  max-width: 100%;
+}
+
+picture {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+address {
+  text-align: center;
+  margin: auto;
+}
+
+.info, .info > p {
+  text-align: center;
+  margin: auto;
+}
+
+/*homepage list*/
+.flex-container {
+  display: flex;
+  max-width: 100%;
+  margin: 1em auto 4em auto;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 0;
+}
+
+.flex-item > img {
+  text-align: center;
+}
+
+.flex-item {
+  max-width: 30em;
+}
+
+nav > ul {
+  list-style-type: none;
+}
+
+/*for comic pages*/
+.comic-container {
+  display: flex;
+  max-width: 100%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.single {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 3em;
+  height: auto;
+}
+
+/*for image galleries*/
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.item {
+  margin: 1em;
+  padding: 0.2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #262626;
+    color: #d6d3d1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+
+  span.red {
+    color: #0c0a09;
+    background-color: #d6d3d1;
+    border: none;
+  }
+
+  a[href],
+  a[href]:visited {
+    color: inherit
+  }
+
+  a[href]:hover {
+    color: #d6d3d1;
+    background-color: #475569;
+  }
+
+  hr {
+    border: none;
+    border-top: #737373 1px solid;
+  }
+
+  img.pixel {
+    filter: invert(1) brightness(.85);
+  }
+
+  img {
+    filter: brightness(.85) contrast(.95);
+  }
+
+  /*figcaption {
+    color: #a3a3a3;
+  }*/
+}
+
+@media screen and (width <=50rem) {
+
+  body {
+    padding: 0em 0.6em;
+  }
+
+  header {
+    font-size: large;
+    line-height: 1.8;
+  }
+
+  .main-list {
+    margin: 1em auto 0 auto;
+    gap: 1em 0;
+    justify-content: flex-start;
+  }
+
+  /*gallery*/
+  .item {
+    max-width: 8em;
+    padding: 0.1em;
+  }
+
+}

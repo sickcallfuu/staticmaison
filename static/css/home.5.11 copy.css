@@ -1,0 +1,333 @@
+/* Make HTML more responsive (adapted from https://github.com/mrmrs/fluidity) */
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+  height: auto;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+/* Box-model fix (adapted from https://css-tricks.com/box-sizing/) */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 1.125em;
+}
+
+body {
+  color: #262626;
+  background-color: #f5f5f5;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0em 1em;
+  font-family: monospace;
+}
+
+p {
+  max-width: 80em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+ul,ol,li {
+  max-width: 40em;
+}
+
+span.red {
+  font-size: small;
+  padding: 0.1em;
+  color: #9f1239;
+  background-color: #fff1f2;
+  border: #9f1239 solid 1px;
+}
+
+a[href],
+a[href]:visited {
+  color: #525252;
+}
+
+a[href]:hover {
+  background-color: #ddd6fe;
+}
+
+:not(a[href]) b,
+:not(a[href]) strong,
+th {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Logarithmic size scale for headings (see https://github.com/waldyrious/downstyler/issues/30) */
+h1 {
+  font-size: 200.00%;
+  /* 2^(6/6) */
+}
+
+h2 {
+  font-size: 178.18%;
+  /* 2^(5/6) */
+}
+
+h3 {
+  font-size: 158.74%;
+  /* 2^(4/6) */
+}
+
+h4 {
+  font-size: 141.42%;
+  /* 2^(3/6) */
+}
+
+h5 {
+  font-size: 125.99%;
+  /* 2^(2/6) */
+}
+
+h6 {
+  font-size: 112.25%;
+  /* 2^(1/6) */
+}
+
+
+
+hr {
+  border: none;
+  border-top: #111 1px solid;
+}
+
+header {
+  max-width: 100%;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+footer {
+  padding-bottom: 0.6em;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* Simple table style                                                                                                 */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding-left: .5em;
+  padding-right: 1em;
+  text-align: start;
+  border: 1px solid #ddd;
+}
+
+th,
+thead,
+tfoot {
+  background: #eee;
+  font-weight: bold;
+}
+
+figure {
+  max-width: 100%;
+  padding: 0em;
+  margin: 0em;
+}
+
+figcaption {
+  color: inherit;
+  font-size: 100% !important;
+}
+
+/*figcaption {
+  font: inherit;
+  color: #333;
+  font-size: 85% !important;
+}*/
+
+/* Prevent blowing up SVG images that are meant to be small */
+*[class*="social"] svg,
+*[class*="icon"] svg,
+svg[class*="icon"],
+img[class*="emoji"][src$=".svg"] {
+  max-height: 30px;
+}
+
+*[class*="logo" i] svg,
+*[id*="logo" i] svg {
+  max-width: 100px;
+}
+
+/*pixelly images*/
+.pixel {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/*homepage list*/
+.home-list {
+  display: flex;
+  max-width: 100%;
+  margin: 1em auto 0 auto;
+  gap: 6em 1em;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.home-list>.home-item {
+  flex-grow: 1;
+  max-width: 28em;
+}
+
+.home-item>ul {
+  list-style-type: none;
+}
+
+/*for comic pages*/
+.container {
+  display: flex;
+  max-width: 100%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.single {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 5em;
+  max-width: 100%;
+  height: auto;
+  align-content: end;
+}
+
+.spread {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 5em;
+  max-width: 100%;
+  height: auto;
+}
+
+/*for image galleries*/
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.item {
+  margin: 1em;
+  padding: 0.2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #262626;
+    color: #d6d3d1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+
+  span.red {
+    color: #0c0a09;
+    background-color: #d6d3d1;
+    border: none;
+  }
+
+  a[href],
+  a[href]:visited {
+    color: inherit
+  }
+
+  a[href]:hover {
+    color: #d6d3d1;
+    background-color: #475569;
+  }
+
+  hr {
+    border: none;
+    border-top: #737373 1px solid;
+  }
+
+  img.pixel {
+    filter: invert(1) brightness(.85);
+  }
+
+  img {
+    filter: brightness(.85) contrast(.95);
+  }
+
+  /*figcaption {
+    color: #a3a3a3;
+  }*/
+}
+
+@media screen and (width <=50rem) {
+
+  body {
+    padding: 0em 0.6em;
+  }
+
+  header {
+    font-size: large;
+    line-height: 1.8;
+  }
+
+  .home-list {
+    margin: 1em auto 0 auto;
+    gap: 1em 0;
+    justify-content: flex-start;
+  }
+
+  /*gallery*/
+  .item {
+    max-width: 8em;
+    padding: 0.1em;
+  }
+
+}

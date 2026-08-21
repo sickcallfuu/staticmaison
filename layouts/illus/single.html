@@ -1,0 +1,28 @@
+{{define "main"}}
+<dl>
+    <dt>{{ .Date.Format "2006-01-02" }}</dt>
+    {{ if .Params.pageCount }}
+    <dt>{{ .Params.pageCount }}</dt>
+    {{ end }}
+
+    {{if .Params.publisher }}
+    <dt>{{ .Params.publisher }}</dt>
+    {{ end }}
+
+    {{ if .Description }}
+    <dt>{{ .Description }}</dt>
+    {{ end }}
+
+    {{ if .Params.extLink }}
+    <dt>→ <a href="{{ .Params.extLink }}">{{ .Params.extLinkTitle }}</a></dt>
+    {{ end }}
+
+    {{ if .Params.extLink2 }}
+    <dt>→ <a href="{{ .Params.extLink2 }}">{{ .Params.extLinkTitle2 }}</a></dt>
+    {{ end }}
+</dl>
+
+<div class="comic-container">
+    {{ .Content | markdownify }}
+    <div>
+        {{ end }}

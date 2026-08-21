@@ -1,0 +1,39 @@
+{{define "main"}}
+<dl>
+    <dt>{{ .Date.Format "2006-01-02" }}</dt>
+    {{ if .Params.pageCount }}
+    <dt>{{ .Params.pageCount }}</dt>
+    {{ end }}
+
+    {{if .Params.publisher }}
+    <dt>{{ .Params.publisher }}</dt>
+    {{ end }}
+
+    {{ if .Description }}
+    <dt>{{ .Description }}</dt>
+    {{ end }}
+
+    {{ if .Params.extLink }}
+    <dt>→ <a href="{{ .Params.extLink }}">{{ .Params.extLinkTitle }}</a></dt>
+    {{ end }}
+
+    {{ if .Params.extLink2 }}
+    <dt>→ <a href="{{ .Params.extLink2 }}">{{ .Params.extLinkTitle2 }}</a></dt>
+    {{ end }}
+</dl>
+
+<div class="comic-container">
+    {{ .Content | markdownify }}
+</div>
+<nav class="comic-nav">
+{{ range first 1 .CurrentSection.Pages }}<a href="{{ .RelPermalink }}">read&#8594;</a>{{ end }}
+
+<img src="/images/line1.png" class="pixel" width="269" height="65" style="display:block;" alt="line">
+
+{{ $pages := .CurrentSection.Pages.ByWeight.Reverse }}
+
+<p><small>all pages:</small></p>
+{{ range .CurrentSection.Pages }}<a href="{{.RelPermalink}}">{{.Title}}</a> {{end}}
+</nav>
+
+{{end}}

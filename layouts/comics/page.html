@@ -1,0 +1,30 @@
+{{define "main"}}
+
+<div class="comic-container">
+    {{ .Content | markdownify }}
+</div>
+
+<nav class="comic-nav">
+{{if .Params.end }}
+<p>{{ .Params.end }} - back to <a href="../..">comics</a></p>
+
+{{ end }}
+{{ $pages := .CurrentSection.Pages.ByWeight.Reverse }}
+
+{{ with $pages.Prev . }}
+<a href="{{ .RelPermalink }}">&#8592;prev</a>
+{{ end }}
+
+{{ with $pages.Next . }}
+<a href="{{ .RelPermalink }}">next&#8594;</a>
+{{ end }}
+
+<img src="/images/line1.png" class="pixel" width="269" height="65" style="display:block;" alt="line">
+<p>{{ range .CurrentSection.Pages }}<a href="{{.RelPermalink}}">{{.Title}}</a> {{end}}</p>
+<p><a href="../">.</a></p>
+<p><a href="../..">..</a></p>
+</nav>
+
+
+
+{{ end }}

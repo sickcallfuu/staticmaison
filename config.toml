@@ -1,0 +1,41 @@
+baseURL = 'https://margot.maison/'
+languageCode = 'en-us'
+title = 'margot.maison'
+author = "margot ferrick"
+email = "m@margot.maison"
+
+[Params]
+    enableGitInfo = true
+    lastmod = ["lastmod", ":fileModTime", ":default"]
+    favicon="images/favicon.ico"
+    imageCdn = "https://cdn.margot.maison/main/"
+
+
+[pagination]
+  disableAliases = false
+  pagerSize = 50
+  path = 'page'
+
+[markup.tableOfContents]
+    endLevel   = 6
+    ordered    = false
+    startLevel = 1
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+[outputs]
+    page = ["HTML","RSS"]
+    home = ["HTML"]
+    section = ["HTML","RSS"]
+    taxonomy = ["HTML"]
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+  unsafe = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

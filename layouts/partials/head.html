@@ -1,0 +1,13 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comics and artwork by Margot Ferrick.">
+    <title>{{.Title}}</title>
+    {{ $css := resources.Get "css/style.css" | minify }}
+    <link href="{{ $css.RelPermalink }}" rel="stylesheet">
+    {{ with .OutputFormats.Get "rss" }}
+    {{ printf `
+    <link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+    {{ end }}
+    <link rel="icon" href="{{ "/images/favicon.ico" | absURL }}" sizes="32x32" type="image/png">
+</head>

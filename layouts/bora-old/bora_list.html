@@ -1,0 +1,25 @@
+{{define "main"}}
+
+<!--$paginator-->
+{{$p := .Pages}}
+{{if .IsHome}}
+{{$p = where site.RegularPages "Type" "in" site.Params.mainSections}}
+{{else if eq .Kind "taxonomy"}}
+{{$p = $p.ByTitle}}
+{{end}}
+{{$paginator := .Paginate $p}}
+<img src="img/borach01_007_008.png" width="1000" height="705" alt="Bora tied to horses.">
+<h1>Bora the Brain [OLD]</h1>
+<p>These are discarded parts of a longer comic that I'm currently working on. Made between 2022-2023.</p>
+<!--list-->
+<ul>
+	{{ range (where .Data.Pages.ByDate "Category" "!=" "bora-old") }}
+	<li>{{ .Lastmod.Format "2006-01-02" }} ... <a href="{{.RelPermalink}}">{{.Title}}</a> -
+    <i>{{ .Description }}</i></li>
+	  
+	{{end}}
+</ul>
+<!--pagination-->
+{{template "_internal/pagination.html" .}}
+
+{{end}}

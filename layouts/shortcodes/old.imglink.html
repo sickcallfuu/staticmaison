@@ -1,0 +1,10 @@
+{{ $original := .Page.Resources.GetMatch (.Get "src") }} <!-- Get the first matching page resource with the filename given in src -->
+{{ $title := .Get "title" }} <!-- Get the value passed in as title -->
+{{ $size := .Get "size" }} <!-- Get the value passed in as size -->
+{{ .Scratch.Set "image" ($original.Fit $size) }} <!-- Create an image which is a scaled version of the original image, keeping aspect ratio -->
+{{ $image := .Scratch.Get "image" }} <!-- Get the new image and assign to $image -->
+<!-- Create the HTML to use in the post, this populates the placeholders with the values determined above -->
+
+<a href="{{ $original.RelPermalink }}">
+    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $title }}">
+</a>

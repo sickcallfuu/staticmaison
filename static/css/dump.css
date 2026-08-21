@@ -1,0 +1,104 @@
+/* Make HTML more responsive (adapted from https://github.com/mrmrs/fluidity) */
+img, canvas, iframe, video, svg, select, textarea { max-width: 100%; height: auto; }
+pre { overflow-x: auto; }
+
+/* Box-model fix (adapted from https://css-tricks.com/box-sizing/) */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+/* Size text according to screen width (adapted from https://css-tricks.com/molten-leading-css/) */
+html { 
+    font-size: clamp(1.2rem, calc(13px + 0.5vw), 1rem); 
+    
+}
+
+
+:root {
+    --bg: #f4f3ee;
+    --text-color: #222;
+    --link-color: #222;
+    --link-hover: RoyalBlue;
+    
+}
+
+/* Improved text layout and spacing (adapted from http://bettermotherfuckingwebsite.com) */
+body {line-height: 1.2; text-align: left; hyphens: auto; margin: auto; padding: 0.5em; max-width: 100%; font-family: serif;  }
+
+h1, h2, h3, h4, h5, h6 { margin-top: 1.4em; line-height: 1; max-width: 30em; font-weight: 300;}
+
+/* Improved contrast (adapted from https://jgthms.com/web-design-in-4-minutes/#color-contrast) */
+body {
+    background: var(--bg);
+    color: var(--text-color);
+    background-image: url("baggy2.png"); 
+    background-attachment: 
+    fixed;background-repeat: repeat;
+}
+:not(a[href]) b, :not(a[href]) strong, th { color: #222; }
+
+
+  
+
+/* Logarithmic size scale for headings (see https://github.com/waldyrious/downstyler/issues/30) */
+h1 { color: #222; font-size: 200.00%; /* 2^(6/6) */ }
+h2 { color: #222; font-size: 178.18%; /* 2^(5/6) */ }
+h3 { color: #222; font-size: 158.74%; /* 2^(4/6) */ }
+h4 { color: #222; font-size: 141.42%; /* 2^(3/6) */ }
+h5 { color: #222; font-size: 125.99%; /* 2^(2/6) */ }
+h6 { color: #222; font-size: 112.25%; /* 2^(1/6) */ }
+
+
+p { 
+    max-width: 40em;
+    padding: 0em 0.4em 0em 0.4em;
+ }
+
+ul, li {
+    list-style-type: disc;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+footer {
+    display: inline-block;
+    flex-wrap: wrap;
+    font-size: 1em;
+    width: 100%;
+    justify-content: flex-start;
+    border-top: 1px solid #222;
+    padding-top: 1em;
+    
+}
+
+table { border-collapse: collapse; }
+th, td { padding-left: .5em; padding-right: 1em; text-align: left; border: 1px solid #ddd; }
+th, thead, tfoot { background: #eee; font-weight: bold; }
+
+/* Forms and form inputs (work in progress, see https://github.com/waldyrious/downstyler/issues/5)                    */
+textarea { vertical-align: text-top; }
+textarea, input[type=text], input:not([type]) { font-family: monospace; font-size: 80%; }
+input[type] { font-family: sans-serif; font-size: 100%; }
+
+/* Add margins to left- and right-aligned images (https://github.com/waldyrious/downstyler/issues/13) */
+img[align="right"] { margin-left: 1em; }
+img[align="left"] { margin-right: 1em; }
+
+/* Figure captions */
+figcaption { font: caption; color: #222; font-family: monospace; font-size: 75% !important; }
+
+/* Prevent blowing up SVG images that are meant to be small */
+*[class*="social"] svg, *[class*="icon"] svg, svg[class*="icon"], img[class*="emoji"][src$=".svg"] { max-height: 30px; }
+*[class*="logo" i] svg, *[id*="logo" i] svg { max-width: 100px; }
+
+/* Softer link colors than the browser defaults */
+a[href] { color: var(--link-color); }
+a[href]:hover { color: var(--link-hover); }
+
+/* Styles for code-related elements */
+pre, :not(pre) code, kbd, samp, tt { padding: .1em .3em; margin: 0 .1em; font-size: 80%; background: #eee; }
+
+/* Styles for blockquote elements */
+blockquote { padding-left: 1em; margin-left: 0; border-left: 5px solid #ddd; color: #666; }
+
+/* Softer selection color that works over text and links without the color inversion effect */
+::selection { background-color: rgb(136, 136, 136); }

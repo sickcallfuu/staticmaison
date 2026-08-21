@@ -1,0 +1,13 @@
+{{define "main"}}
+<a href="../index.xml">rss</a>
+
+<h1>{{.Date.Format "2006-01-02"}}</h1>
+
+<section>
+{{.Content}}
+</section>
+
+{{with .PrevInSection}}Prev <a href="{{.RelPermalink}}">{{.Title}}</a>{{end}}
+{{with .NextInSection}}Next <a href="{{.RelPermalink}}">{{.Title}}</a>{{end}}
+
+{{end}}
