@@ -1,24 +1,25 @@
 {{define "main"}}
 <dl>
-    <dt>{{ .Date.Format "2006-01-02" }}</dt>
+<dt style="visibility:hidden">info:</dt>
+    <dd>{{ .Date.Format "2006-01-02" }}</dd>
     {{ if .Params.pageCount }}
-    <dt>{{ .Params.pageCount }}</dt>
+    <dd>{{ .Params.pageCount }}</dd>
     {{ end }}
 
     {{if .Params.publisher }}
-    <dt>{{ .Params.publisher }}</dt>
+    <dd>{{ .Params.publisher }}</dd>
     {{ end }}
 
     {{ if .Description }}
-    <dt>{{ .Description }}</dt>
+    <dd>{{ .Description }}</dd>
     {{ end }}
 
     {{ if .Params.extLink }}
-    <dt>→ <a href="{{ .Params.extLink }}">{{ .Params.extLinkTitle }}</a></dt>
+    <dd>→ <a href="{{ .Params.extLink }}">{{ .Params.extLinkTitle }}</a></dd>
     {{ end }}
 
     {{ if .Params.extLink2 }}
-    <dt>→ <a href="{{ .Params.extLink2 }}">{{ .Params.extLinkTitle2 }}</a></dt>
+    <dd>→ <a href="{{ .Params.extLink2 }}">{{ .Params.extLinkTitle2 }}</a></dd>
     {{ end }}
 </dl>
 
