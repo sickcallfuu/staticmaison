@@ -1,28 +1,27 @@
 {{define "main"}}
-<dl>
-    <dt>{{ .Date.Format "2006-01-02" }}</dt>
-    {{ if .Params.pageCount }}
-    <dt>{{ .Params.pageCount }}</dt>
-    {{ end }}
+<p>{{ .Date.Format "2006-01-02" }}</p>
+{{ if .Params.pageCount }}
+<p>{{ .Params.pageCount }}</p>
+{{ end }}
 
-    {{if .Params.publisher }}
-    <dt>{{ .Params.publisher }}</dt>
-    {{ end }}
+{{if .Params.publisher }}
+<p>{{ .Params.publisher }}</p>
+{{ end }}
 
-    {{ if .Description }}
-    <dt>{{ .Description }}</dt>
-    {{ end }}
+{{ if .Description }}
+<p>{{ .Description }}</p>
+{{ end }}
 
-    {{ if .Params.extLink }}
-    <dt>→ <a href="{{ .Params.extLink }}">{{ .Params.extLinkTitle }}</a></dt>
-    {{ end }}
+{{ if .Params.extLink }}
+<p>→ <a href="{{ .Params.extLink }}">{{ .Params.extLinkTitle }}</a></p>
+{{ end }}
 
-    {{ if .Params.extLink2 }}
-    <dt>→ <a href="{{ .Params.extLink2 }}">{{ .Params.extLinkTitle2 }}</a></dt>
-    {{ end }}
-</dl>
-
+{{ if .Params.extLink2 }}
+<p>→ <a href="{{ .Params.extLink2 }}">{{ .Params.extLinkTitle2 }}</a></p>
+{{ end }}
+<main>
 <div class="comic-container">
     {{ .Content | markdownify }}
 </div>
+</main>
         {{ end }}
