@@ -1,12 +1,14 @@
 {{define "main"}}
-<p>{{ .Date.Format "2006-01-02" }}</p>
+<ul>
+<li>{{ .Date.Format "2006-01-02" }}</li>
 {{ if .Description }}
-<p>{{ .Description }}</p>
+<li>{{ .Description }}</li>
 {{ end }}
 {{- if .Params.tags }} 
-<p>{{ range .Params.tags }} 
-[{{ . }}]{{ end }}</p>
+<li>{{ range .Params.tags }} 
+[{{ . }}]{{ end }}</li>
 {{ end }}
+</ul>
 <main>
 {{ .Content }}
 </main>

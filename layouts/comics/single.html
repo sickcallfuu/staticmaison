@@ -1,23 +1,23 @@
 {{define "main"}}
-<p>{{ .Date.Format "2006-01-02" }}</p>
+<li>{{ .Date.Format "2006-01-02" }}</li>
 {{ if .Params.pageCount }}
-<p>{{ .Params.pageCount }}</p>
+<li>{{ .Params.pageCount }}</li>
 {{ end }}
 
 {{if .Params.publisher }}
-<p>{{ .Params.publisher }}</p>
+<li>{{ .Params.publisher }}</li>
 {{ end }}
 
 {{ if .Description }}
-<p>{{ .Description }}</p>
+<li>{{ .Description }}</li>
 {{ end }}
 
 {{ if .Params.extLink }}
-<p>→ <a href="{{ .Params.extLink }}">{{ .Params.extLinkTitle }}</a></p>
+<li>→ <a href="{{ .Params.extLink }}">{{ .Params.extLinkTitle }}</a></li>
 {{ end }}
 
 {{ if .Params.extLink2 }}
-<p>→ <a href="{{ .Params.extLink2 }}">{{ .Params.extLinkTitle2 }}</a></p>
+<li>→ <a href="{{ .Params.extLink2 }}">{{ .Params.extLinkTitle2 }}</a></li>
 {{ end }}
 <main>
 <div class="comic-container">

@@ -2,8 +2,9 @@
 {{ $date := .Date.Format "2006-01-02" }}
 {{ $lastmod := .Lastmod.Format "2006-01-02" }}
 <dl>
-    <dt>{{ $date }} {{ if ne $lastmod $date }}</dt>
-    <dt> → last update {{ .Lastmod.Format "2006-01-02" }} {{ end }}</dt>
+    <dt style="visibility:hidden">info:</dt>
+    <dd>{{ $date }} {{ if ne $lastmod $date }}</dd>
+    <dd> → last update {{ .Lastmod.Format "2006-01-02" }} {{ end }}</dd>
     <dd>{{ .Description }}</dd>
 </dl>
 
