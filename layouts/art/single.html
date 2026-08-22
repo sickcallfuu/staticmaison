@@ -1,14 +1,15 @@
 {{define "main"}}
-<ul>
-<li>{{ .Date.Format "2006-01-02" }}</li>
+<dl>
+<dt style="visibility: hidden;">info:</dt>
+<dd>{{ .Date.Format "2006-01-02" }}</dd>
 {{ if .Description }}
-<li>{{ .Description }}</li>
+<dd>{{ .Description }}</dd>
 {{ end }}
 {{- if .Params.tags }} 
-<li>{{ range .Params.tags }} 
-[{{ . }}]{{ end }}</li>
+<dd>{{ range .Params.tags }} 
+[{{ . }}]{{ end }}</dd>
 {{ end }}
-</ul>
+</dl>
 <main>
 {{ .Content }}
 </main>
