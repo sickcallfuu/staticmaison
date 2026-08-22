@@ -5,7 +5,6 @@
 <body>
     {{- partial "header.html" . -}}
     <main>
-        <section>
             <img src="/images/canny-moths-1000_dithered_03.png" width="1000" height="583" alt="doley looking at moths">
             <p>Margot Ferrick</p>
             <address><a href="mailto:m&commat;margot&period;maison">m&commat;margot&period;maison</a></address>
@@ -19,14 +18,13 @@
             <p>This is an archive of my comics and artwork.</p>
             <p>Some content is explicit and labeled as
                 <span
-                    style="font-size: smaller; font-weight: bold; color: #9f1239; background-color: none;border: #9f1239 solid 1px; padding: 0.1em">R-18</span>.
+                    style="font-size: smaller; font-weight: bold; color: #9f1239; background-color: inherit;border: #9f1239 solid 1px; padding: 0.1em">R-18</span>.
             </p>
 
             <p>Updated {{ range (where .Site.Pages "Section" "up_log") }}{{ range first 1 .Data.Pages }}<a
                     href="{{.RelPermalink}}">{{.Title}}</a>.{{ end }}
                 {{ end }}</p>
             <img src="/images/tinyfairy.png" class="pixel" width="135" height="60" alt="tiny fairy">
-        </section>
         <section>
             <h1>what is here...?</h1>
             <h2>working</h2>
@@ -89,7 +87,7 @@
                         {{- if
                         .Params.tags }}
                         <span
-                            style="font-size: smaller; font-weight: bold; color: #9f1239; background-color: none;border: #9f1239 solid 1px; padding: 0.1em">
+                            style="font-size: smaller; font-weight: bold; color: #9f1239; background-color: inherit;border: #9f1239 solid 1px; padding: 0.1em">
                             {{ range .Params.tags }}
                             {{ . }}</span>
                         {{ end }}
@@ -151,12 +149,8 @@
                 </ul>
             </nav>
             <img src="/images/line1.png" class="pixel" width="269" height="65" alt="drawn line">
-        </section>
-</body>
-
-</html>
+</section>
 </main>
 {{- partial "footer.html" . -}}
 </body>
-
 </html>
