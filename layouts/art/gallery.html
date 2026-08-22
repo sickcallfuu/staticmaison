@@ -27,7 +27,7 @@
         <figure><a href="{{.RelPermalink}}">
             {{- $imageCdn := .Site.Params.imageCdn -}}
             {{- $src := printf "%s%s" (strings.TrimSuffix "/" $imageCdn) .Params.featuredImageExternal -}}
-            <img src="{{ $src }}" {{ with try (resources.GetRemote $src) }}{{ with .Value }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}{{ end }}><figcaption>{{.Date.Format "2006-01-02" }}: {{.Title}} {{ .Params.tags }}</figcaption></a>
+            <img src="{{ $src }}" {{ with try (resources.GetRemote $src) }}{{ with .Value }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}{{ end }}></a><figcaption><a href="{{.RelPermalink}}">{{.Date.Format "2006-01-02" }}: {{.Title}} {{ .Params.tags }}</a></figcaption>
         </figure>
     </div>
     {{ end }}
