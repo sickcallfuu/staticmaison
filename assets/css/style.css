@@ -64,6 +64,7 @@ li {
 
 dl, dt, dd {
   line-height: 1;
+  margin: auto;
 }
 
 strong {
