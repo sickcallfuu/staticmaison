@@ -274,7 +274,7 @@ img[class*="emoji"][src$=".svg"] {
   }
 
   .gallery > .item {
-    max-width: 10em;
+    max-width: 8em;
     padding: 0.1em;
     
   }
