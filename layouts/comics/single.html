@@ -1,24 +1,27 @@
 {{define "main"}}
-<li>{{ .Date.Format "2006-01-02" }}</li>
+<dl>
+<dt style="visibility:hidden;">info:</dt>
+<dd>{{ .Date.Format "2006-01-02" }}</dd>
 {{ if .Params.pageCount }}
-<li>{{ .Params.pageCount }}</li>
+<dd>{{ .Params.pageCount }}</dd>
 {{ end }}
 
-{{if .Params.publisher }}
-<li>{{ .Params.publisher }}</li>
+{{if .Params.pubddsher }}
+<dd>{{ .Params.pubddsher }}</dd>
 {{ end }}
 
 {{ if .Description }}
-<li>{{ .Description }}</li>
+<dd>{{ .Description }}</dd>
 {{ end }}
 
-{{ if .Params.extLink }}
-<li>→ <a href="{{ .Params.extLink }}">{{ .Params.extLinkTitle }}</a></li>
+{{ if .Params.extddnk }}
+<dd>→ <a href="{{ .Params.extddnk }}">{{ .Params.extddnkTitle }}</a></dd>
 {{ end }}
 
-{{ if .Params.extLink2 }}
-<li>→ <a href="{{ .Params.extLink2 }}">{{ .Params.extLinkTitle2 }}</a></li>
+{{ if .Params.extddnk2 }}
+<dd>→ <a href="{{ .Params.extddnk2 }}">{{ .Params.extddnkTitle2 }}</a></dd>
 {{ end }}
+</dl>
 <main>
 <div class="comic-container">
     {{ .Content | markdownify }}
