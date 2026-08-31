@@ -4,12 +4,14 @@
 
 <body>
     {{- partial "header.html" . -}}
-
-           <!-- <img src="/images/canny-moths-1000_dithered_03.png" width="1000" height="583" alt="doley looking at moths">-->
+    <main>
+            <img src="/images/canny-moths-1000_dithered_03.png" width="1000" height="583" alt="doley looking at moths">
             <p>Margot Ferrick</p>
             <address><a href="mailto:m&commat;margot&period;maison">m&commat;margot&period;maison</a></address>
             <p>
                 <a href="/page/info/">info</a>
+                /
+                <a href="https://slit.margot.maison/">blog</a>
                 /
                 <a href="/up_log/index.xml">rss</a>
             </p>
@@ -19,20 +21,14 @@
                     style="font-size: smaller; font-weight: bold; color: #9f1239; background-color: inherit;border: #9f1239 solid 1px; padding: 0.1em">R-18</span>.
             </p>
 
-               <details>
-              <summary>Updated {{ range (where .Site.Pages "Section" "up_log") }}{{ range first 1 .Data.Pages }} <a href="{{.RelPermalink}}">{{.Title}}</a>.{{ end }}{{ end }}
-              </summary>
-             {{ range (where .Site.Pages "Section"
-                "up_log") }}{{ range first 1 .Data.Pages }}{{ .Summary }}<p><a href="{{.RelPermalink}}">full post</a> / <a href="/up_log">all updates</a></p>{{end}}{{ end }}
-
-
-</details>
+            <p>Updated {{ range (where .Site.Pages "Section" "up_log") }}{{ range first 1 .Data.Pages }}<a
+                    href="{{.RelPermalink}}">{{.Title}}</a>.{{ end }}
+                {{ end }}</p>
             <img src="/images/tinyfairy.png" class="pixel" width="135" height="60" alt="tiny fairy">
-            <main>
+        <section>
             <h1>what is here...?</h1>
-              <div id="columns">
-                <section id="working">
-              <h2>working</h2>
+            <h2>working</h2>
+            <nav aria-label="work in progress">
                 <ul>
                     <li>
                         <a href="https://slit.margot.maison">slit of mind</a>: blog
@@ -43,10 +39,14 @@
                         currently in progress, hopefully done in 2027.
                     </li>
                 </ul>
+            </nav>
             <img src="/images/line1.png" class="pixel" width="269" height="65" alt="drawn line">
-                </section>
-                <section id="comics">
+        </section>
+
+        <section>
+
             <h2>comics</h2>
+            <nav aria-label="comics">
                 <ul>
                     {{ range where .Pages "Type" "comics" }}
                     {{ range .Pages.ByLastmod.Reverse }}
@@ -58,6 +58,7 @@
                     {{ end }}
                     <li>2012-09-01 ... <a href="https://nycartoonlibrary.org/margotspider.html">Spider's Visit</a> (at nycartoonlibrary.org)</li>
                 </ul>
+
                 <h3>very short oneshots</h3>
                 <ul>
                     {{ range where .Pages "Type" "oneshots" }}
@@ -69,16 +70,20 @@
                     {{ end }}
                     {{ end }}
                 </ul>
-               <img src="/images/line2.png" class="pixel" width="175" height="45" alt="line 2">
-                </section>
-<section>
+            </nav>
+            <img src="/images/line3.png" class="pixel" width="156" height="60" alt="line 3">
+        </section>
+
+        <section>
+
             <h2>drawings/paintings</h2>
+            <nav aria-label="drawings and paintings">
                 <ul>
                     {{ range where .Pages "Type" "art"}}
                     {{ range .Pages.ByLastmod.Reverse }}
                     <li>{{ .Lastmod.Format "2006-01-02" }}
-                      ...
-                      <a href="{{.RelPermalink}}">{{.Title}}</a>
+                        ...
+                        <a href="{{.RelPermalink}}">{{.Title}}</a>
                         {{- if
                         .Params.tags }}
                         <span
@@ -91,8 +96,14 @@
                     {{ end }}
                     {{ end }}
                 </ul>
-               <img src="/images/line3.png" class="pixel" width="156" height="60" alt="line 3">
+
+            </nav>
+            <img src="/images/ray3.png" class="pixel" width="293" height="247" alt="ray 3">
+        </section>
+
+        <section>
             <h2>illustration</h2>
+            <nav aria-label="illustration">
                 <ul>
                     {{ range where .Pages "Type" "illus" }}
                     {{ range .Pages.ByLastmod.Reverse }}
@@ -103,9 +114,13 @@
                     {{ end }}
                     {{ end }}
                 </ul>
-</section>
-<section>
+            </nav>
+            <img src="/images/line2.png" class="pixel" width="175" height="45" alt="line 2">
+        </section>
+
+        <section>
             <h2>elsewhere</h2>
+            <nav aria-label="external links">
                 <ul>
                     <li>
                         <a href="https://www.pixiv.net/en/users/83480423">pixiv</a>
@@ -132,9 +147,9 @@
                         Published by Breakdown Press.
                     </li>
                 </ul>
-                <img src="/images/ray3.png" class="pixel" width="293" height="247" alt="ray 3">
-                </section>
-            </div>
+            </nav>
+            <img src="/images/line1.png" class="pixel" width="269" height="65" alt="drawn line">
+</section>
 </main>
 {{- partial "footer.html" . -}}
 </body>

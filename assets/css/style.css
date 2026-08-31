@@ -35,10 +35,15 @@ body {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.125em;
   line-height: 1.2;
+  margin: auto;
+  padding: 0.4em;
 }
 
 section {
   max-width: 100%;
+   -webkit-column-break-inside: avoid;
+   page-break-inside: avoid;
+   break-inside: avoid;
 }
 
 p {
@@ -52,14 +57,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: sans-serif;
-  text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 ul,
 ol,
 li {
   max-width: 31em;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
 
 dl, dt, dd {
@@ -91,6 +103,7 @@ hr {
   border: none;
   border-top: #111 1px solid;
   max-width: 100%;
+  margin-top: 0.2em;
 }
 
 header {
@@ -149,6 +162,14 @@ img[class*="emoji"][src$=".svg"] {
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
   max-width: 100%;
+}
+
+#columns {
+    column-width: 20em;
+    column-rule: 1px solid #262626;
+    column-gap: 1.4em;
+    align-content: space-between;
+    margin: 2em 1em 2em 1em;
 }
 
 /*for comic pages*/
@@ -250,7 +271,7 @@ img[class*="emoji"][src$=".svg"] {
     */
 }
 
-@media screen and (width <=55rem) {
+@media screen and (width <=35rem) {
 
   body {
     padding: 0em 0.2em;
@@ -266,6 +287,10 @@ img[class*="emoji"][src$=".svg"] {
   figure {
   max-width: 100%;
   margin: 0;
+  }
+
+  .grid {
+      display: inline-grid;
   }
 
   /*gallery*/
