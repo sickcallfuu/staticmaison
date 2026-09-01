@@ -249,6 +249,10 @@ img[class*="emoji"][src$=".svg"] {
     border-top: rgb(121, 107, 107) 1px solid;
   }
 
+  #columns {
+    column-rule: 1px solid rgb(121, 107, 107);
+  }
+
   img.pixel {
     filter: brightness(0) saturate(100%) invert(76%) sepia(23%) saturate(119%) hue-rotate(314deg) brightness(91%) contrast(93%);
   }
@@ -271,7 +275,7 @@ img[class*="emoji"][src$=".svg"] {
     */
 }
 
-@media screen and (width <=35rem) {
+@media screen and (width <=50rem) {
 
   body {
     padding: 0em 0.2em;
@@ -289,10 +293,6 @@ img[class*="emoji"][src$=".svg"] {
   margin: 0;
   }
 
-  .grid {
-      display: inline-grid;
-  }
-
   /*gallery*/
 
   .gallery {
@@ -300,6 +300,7 @@ img[class*="emoji"][src$=".svg"] {
     align-content: center;
     max-width: 100%;
     gap: 1px;
+    flex-shrink: 2;
   }
 
   .gallery > .item {
