@@ -148,18 +148,18 @@ img[class*="emoji"][src$=".svg"] {
 }
 
 /*pixelly images*/
-.pixel, .main {
+.pixel {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
-  max-width: 100%;
 }
 
-picture {
-  display: block;
-  text-align: center;
-  margin: auto;
+.main {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
+
 
 address {
   text-align: center;
