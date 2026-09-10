@@ -148,7 +148,7 @@ img[class*="emoji"][src$=".svg"] {
 }
 
 /*pixelly images*/
-.pixel {
+.pixel, .main {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;

@@ -4,19 +4,13 @@
 
 <body>
   {{- partial "header.html" . -}}
-  <img src="/images/canny-moths-1000_dithered_03.png" width="1000" height="583" alt="doley looking at moths">
-            <p>Margot Ferrick</p>
-            <address><a href="mailto:m&commat;margot&period;maison">m&commat;margot&period;maison</a></address>
-            <p>
-                <a href="/page/info/">info</a>
-                /
-                <a href="/up_log/index.xml">rss</a>
-            </p>
-            <p>This is an archive of my comics and artwork.</p>
-            <p>Some content is explicit and labeled as
-                <span
-                    style="font-size: smaller; font-weight: bold; color: #9f1239; background-color: inherit;border: #9f1239 solid 1px; padding: 0.1em">R-18</span>.
-            </p>
+  <picture>
+    <source srcset="/images/double2-crop-orange-div2.png" media="(prefers-color-scheme:dark)">
+    <img src="/images/double2-crop-div2.png" class="main" alt="Henny and Bora">
+    </picture>
+  <address>Margot Ferrick <a href="mailto:m&commat;margot&period;maison">m&commat;margot&period;maison</a></address>
+  <p><strong><i>Some content is explicit and labeled as <span style="font-size: smaller; font-weight: bold; color: #9f1239; background-color: inherit;border: #9f1239 solid 1px; padding: 0.1em">R-18</span> .</i></strong></p>
+
 
                <details>
               <summary>Updated {{ range (where .Site.Pages "Section" "up_log") }}{{ range first 1 .Data.Pages }} <a href="{{.RelPermalink}}">{{.Title}}</a>.{{ end }}{{ end }}
@@ -26,23 +20,33 @@
 
 
 </details>
-            <img src="/images/tinyfairy.png" class="pixel" width="135" height="60" alt="tiny fairy">
             <main>
-            <h1>what is here...?</h1>
+        <h1 style="display:none;">margot.maison</h1>
               <div id="columns">
+                <section id="info">
+                  <h2>info</h2>
+                  <ul>
+                  {{ range where .Pages "Type" "page" }}
+                  {{ range .Pages.ByWeight }}
+                    <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
+                    {{ end }}
+                    {{ end }}
+                    <li><a href="/up_log/index.xml">rss</a></li>
+                    </ul>
+                </section>
                 <section id="working">
-              <h2>working</h2>
+              <h2>working...</h2>
                 <ul>
                     <li>
-                        <a href="https://slit.margot.maison">slit of mind</a>: blog
+                        <a href="https://slit.margot.maison">slit of mind</a> (blog)
                     </li>
                     <li>
                         <a href="https://slit.margot.maison/tags/borathebrain/">Bora the Brain WIP</a>: longer
                         comic
-                        currently in progress, hopefully done in 2027.
+                        currently in progress, hoping to finish sometime in 2027.
                     </li>
                 </ul>
-            <img src="/images/line1.png" class="pixel" width="269" height="65" alt="drawn line">
+            <img src="/images/nymph1.png" class="pixel" width="234" height="173" alt="nymph">
                 </section>
                 <section id="comics">
             <h2>comics</h2>

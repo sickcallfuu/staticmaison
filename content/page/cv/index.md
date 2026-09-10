@@ -1,11 +1,11 @@
 ---
-title: "CV"
-date: 2025-02-07T20:16:36-06:00
+title: "cv"
+date: 2025-02-07
 lastmod:
 type: page
 categories:
 tags:
-draft: false
+weight: 2
 ---
 [cv.txt](cv.txt)
 

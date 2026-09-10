@@ -1,10 +1,11 @@
 ---
-title: "info"
-date: 2025-02-07T02:17:42-06:00
-lastmod: 2025-02-10
+title: "about"
+date: 2025-02-07
+lastmod: 2026-08-30
 type: page
 draft: false
 toc: true
+weight: 1
 ---
 
 # me
@@ -46,7 +47,7 @@ Born 1988 on Long Island, NY, USA. Now living somewhere in the middle of the cou
 
 ## drawing supplies
 ### for comics
-* Pentel Brush Pen 🖤 - cheap, refillable, has bristles.
+* Pentel Brush Pen  - cheap, refillable, has bristles.
 * Rohrer and Klingner sketchINK in black - to refill brush pens and misc fountain pens. A bit cheaper than Platinum Carbon and seems similar enough. 
 * Any brand felt-tipped pens in 03 and 005 for drawing, 08 for panel lines - I can't tell the difference.
 * pencils - for comics doesn't matter that much, just whatever wood case HB or 2B.
@@ -56,7 +57,7 @@ Born 1988 on Long Island, NY, USA. Now living somewhere in the middle of the cou
 * Holbein gouache
 ## computer stuff
 ### hardware
-* [Ploopy Adept](https://ploopy.co/adept-trackball/)
+* Ploopy Adept trackball mouse
 * Huion Inspiroy H610PRO V2 - it's an ok tablet. Have a Huion Kamvas 22 but it stopped working after a year of use and now just hangs around as a second monitor.
 * [PC built in 2020](https://pcpartpicker.com/user/sickcallfuu/saved/#view=fb6mrH) - Windows 11
 * Thinkpad T420s - Void Linux
