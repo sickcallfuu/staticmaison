@@ -165,7 +165,7 @@ img[class*="emoji"][src$=".svg"] {
 }
 
 #columns {
-    column-width: 20em;
+    columns: 20em;
     column-rule: 1px solid #262626;
     column-gap: 1.4em;
     align-content: space-between;
@@ -294,7 +294,6 @@ img[class*="emoji"][src$=".svg"] {
   }
 
   /*gallery*/
-
   .gallery {
     display: flex;
     align-content: center;
