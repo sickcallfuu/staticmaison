@@ -157,7 +157,8 @@ img[class*="emoji"][src$=".svg"] {
 }
 
 /*pixelly images*/
-.pixel {
+.pixel,
+.main {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
@@ -166,7 +167,7 @@ img[class*="emoji"][src$=".svg"] {
 
 #columns {
     columns: 20em;
-    column-rule: 1px solid #262626;
+    column-rule: 1px solid #ddd6fe;
     column-gap: 1.4em;
     align-content: space-between;
     margin: 2em 1em 2em 1em;
